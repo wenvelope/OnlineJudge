@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
+        <option name="delegatedBuild" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
