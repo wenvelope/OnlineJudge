@@ -7,7 +7,7 @@ public class Solution1003 {
         Scanner sb = new Scanner(System.in);
         while (sb.hasNextInt()) {
             int n = sb.nextInt();
-            int sum = n * (n + 1) / 2;
+            int sum = (1 + n) * n >> 1;
             System.out.println(sum);
         }
     }
