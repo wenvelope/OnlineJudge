@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Solution1077 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        while (s.hasNextLine()) {
+        while (s.hasNextInt()) {
             int nt = 10000;
             int n = s.nextInt();
             boolean flag = false;
@@ -38,7 +38,7 @@ public class Solution1077 {
             if (!flag) {
                 System.out.println("No");
             }
-            if(s.hasNextInt()){
+            if (s.hasNextInt()) {
                 System.out.println();
             }
         }
