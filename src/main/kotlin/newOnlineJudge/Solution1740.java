@@ -8,7 +8,7 @@ public class Solution1740 {
         int N = 123456;
         int category1 = 0;
         int category2 = 0;
-        Set<Integer> set = new HashSet<Integer>();
+        Set<Integer> set = new HashSet<>();
         for (int i = 2; i < N; i++) {
             if (isPrime(i)) {
                 set.add(i);
