@@ -24,21 +24,22 @@ public class Solution1078 {
         Scanner sb = new Scanner(System.in);
         int n = sb.nextInt();
         int m = sb.nextInt();
-        ArrayList<Node> mList = new ArrayList<>();
+        ArrayList<HysScanner> mList = new ArrayList<>();
         for (int t = 0; t < m; t++) {
-            Node node = new Node(sb.nextInt(), sb.nextInt(), sb.nextInt());
+            HysScanner node = new HysScanner(sb.nextInt(), sb.nextInt(), sb.nextInt());
             mList.add(node);
         }
         int safe = 0;
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 boolean isSafe = true;
-                for (Node node : mList) {
-                    if (!node.isSafe(i,j)){
-                       isSafe = false;
+                for (HysScanner node : mList) {
+                    if (!node.isSafe(i, j)) {
+                        isSafe = false;
+                        break;
                     }
                 }
-                if (isSafe){
+                if (isSafe) {
                     safe++;
                 }
             }
@@ -46,12 +47,12 @@ public class Solution1078 {
         System.out.println(safe);
     }
 
-    static class Node {
+    static class HysScanner {
         public int x;
         public int y;
         public int r;
 
-        public Node(int x, int y, int r) {
+        public HysScanner(int x, int y, int r) {
             this.x = x;
             this.y = y;
             this.r = r;
