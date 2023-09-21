@@ -1,5 +1,6 @@
 package newOnlineJudge;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,22 +24,44 @@ public class Solution1078 {
         Scanner sb = new Scanner(System.in);
         int n = sb.nextInt();
         int m = sb.nextInt();
+        ArrayList<Node> mList = new ArrayList<>();
+        for (int t = 0; t < m; t++) {
+            Node node = new Node(sb.nextInt(), sb.nextInt(), sb.nextInt());
+            mList.add(node);
+        }
         int safe = 0;
-        for (int t=0;t<m;t++){
-            int xi, yi, ri;
-            xi = sb.nextInt();
-            yi = sb.nextInt();
-            ri = sb.nextInt();
-            for (int i = 1; i <= n; i++) {
-                for (int j = 1; j <= n; j++) {
-                    int distinguish = (xi - i)*(xi-i) + (yi - j)*(yi-j) - ri*ri;
-                    if (distinguish > 0) {
-                        ++safe;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                boolean isSafe = true;
+                for (Node node : mList) {
+                    if (!node.isSafe(i,j)){
+                       isSafe = false;
                     }
+                }
+                if (isSafe){
+                    safe++;
                 }
             }
         }
         System.out.println(safe);
+    }
+
+    static class Node {
+        public int x;
+        public int y;
+        public int r;
+
+        public Node(int x, int y, int r) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+        }
+
+        public boolean isSafe(int xi, int yi) {
+            int distinguish = (x - xi) * (x - xi) + (y - yi) * (y - yi) - r * r;
+            return distinguish > 0;
+        }
+
     }
 }
 
