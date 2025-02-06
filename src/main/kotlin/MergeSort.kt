@@ -1,3 +1,4 @@
+import jdk.javadoc.internal.doclets.formats.html.markup.HtmlStyle.index
 import java.util.Stack
 
 fun main() {
@@ -14,10 +15,12 @@ fun main() {
  * 3.关键在于合并的方法 选用了临时数组来存储 排序完毕之后再整体替换。
  */
 
-fun MutableList<Int>.mergeSort() {
+fun MutableList<Int>.mergeSort(): Int {
     val low = 0
     val high = size - 1
     val tempList = arrayListOf<Int>()
+
+    var count = 0
 
     val stack = Stack<Int>()
     val taskStack = Stack<Int>()
@@ -61,6 +64,7 @@ fun MutableList<Int>.mergeSort() {
                 } else {
                     tempList.add(this[rightIndex])
                     rightIndex++
+                    count += (leftMax + 1 - leftIndex)
                 }
             }
 
@@ -74,13 +78,14 @@ fun MutableList<Int>.mergeSort() {
                 rightIndex++
             }
 
-            var mListIndex = lowIndex
-            tempList.forEach {
-                this[mListIndex] = it
-                mListIndex++
+            tempList.forEachIndexed{
+                index,value ->
+                this[lowIndex+index] = value
             }
 
         }
     }
+
+    return count
 
 }
