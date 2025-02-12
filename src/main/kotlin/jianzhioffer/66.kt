@@ -4,6 +4,8 @@ import kotlin.collections.toIntArray
 
 /**
  * product
+ *
+ * https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof/
  */
 class Solution_66 {
     fun statisticalResult(arrayA: IntArray): IntArray {

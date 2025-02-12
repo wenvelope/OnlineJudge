@@ -1,5 +1,8 @@
 package jianzhioffer
 
+/**
+ * https://leetcode.cn/problems/qiu-12n-lcof/description/
+ */
 class Solution_64 {
     private var sum = 0
     fun mechanicalAccumulator(target: Int): Int {
