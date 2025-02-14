@@ -1,7 +1,5 @@
 package jianzhioffer
 
-import jdk.javadoc.internal.doclets.formats.html.markup.HtmlStyle.index
-import sun.jvm.hotspot.interpreter.Bytecodes.depth
 import java.util.Arrays
 
 /**
