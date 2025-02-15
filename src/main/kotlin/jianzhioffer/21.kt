@@ -1,7 +1,5 @@
 package jianzhioffer
 
-import com.jogamp.newt.util.MonitorModeUtil.getIndex
-import jdk.javadoc.internal.doclets.formats.html.markup.HtmlStyle.index
 import kotlin.math.ceil
 
 /**
